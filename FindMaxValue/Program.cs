@@ -12,8 +12,9 @@ namespace FindMaxValue
         {
             Console.WriteLine("Wlcome to Find maximum number Application.");
             Console.WriteLine("\nPlease choose number as shown below to find maximum value");
-            Console.WriteLine("\n1:Find maximum value for integer inputs\n2:Find maximum value for float inputs\n3:Find maximum value for string inputs");
+            Console.WriteLine("\n1:Find maximum value for integer inputs\n2:Find maximum value for float inputs\n3:Find maximum value for string inputs\n4:Find maximum of any 3 similar type of values");
             int option = Convert.ToInt32(Console.ReadLine());
+            
             switch (option)
             {
                 case 1:
@@ -43,6 +44,19 @@ namespace FindMaxValue
                     if (maxString != null)
                         Console.WriteLine("{0} is the maximum value out of {1} {2} {3}", FindMaximumValue.FindMaxValue(g, h, i), g, h, i);
                     break;
+                case 4:
+                    Console.WriteLine("Finding maximum value using Generic class");
+                    int j = 3, k = 5, l = 7;
+                    float m = 54.6f, n = 54.3f, o = 42.6f;
+                    string p = "Ria", q = "Shyam", r = "Gita";
+                    GenericForFindMax<int> obj1 = new GenericForFindMax<int>(j, k, l);
+                    GenericForFindMax<float> obj2 = new GenericForFindMax<float>(m, n, o);
+                    GenericForFindMax<string> obj3 = new GenericForFindMax<string>(p, q, r);
+                    obj1.TestMax();
+                    obj2.TestMax();
+                    obj3.TestMax();
+                    break;
+
             }
             Console.ReadLine();
          }   
