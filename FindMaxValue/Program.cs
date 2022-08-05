@@ -46,15 +46,18 @@ namespace FindMaxValue
                     break;
                 case 4:
                     Console.WriteLine("Finding maximum value using Generic class");
-                    int[] arrInt = { 20, 30, 10, 50, 40,60 };
+                    int[] arrInt = { 20, 30, 10, 50, 40,30 };
                     GenericForFindMax<int> obj1 = new GenericForFindMax<int>(arrInt);
-                    obj1.TestMax();
+                    obj1.PrintMaximumValue();
 
                     double[] arrDouble = { 20.65, 32.06, 11.65, 25.2, 40.43, 56.8 };
                     GenericForFindMax<double> obj2 = new GenericForFindMax<double>(arrDouble);
-                    obj2.TestMax();
-                    break;
+                    obj2.PrintMaximumValue();
 
+                    string[] arrString = { "Neha", "Payal", "Vicky", "Swagat" };
+                    GenericForFindMax<string> obj3 = new GenericForFindMax<string>(arrString);
+                    obj3.PrintMaximumValue();
+                    break;
             }
             Console.ReadLine();
         }
