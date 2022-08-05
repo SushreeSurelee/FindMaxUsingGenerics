@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace FindMaxValue
 {
     class Program
-    { 
+    {
         static void Main(string[] args)
         {
             Console.WriteLine("Wlcome to Find maximum number Application.");
             Console.WriteLine("\nPlease choose number as shown below to find maximum value");
-            Console.WriteLine("\n1:Find maximum value for integer inputs\n2:Find maximum value for float inputs\n3:Find maximum value for string inputs\n4:Find maximum of any 3 similar type of values");
+            Console.WriteLine("\n1:Find maximum value for integer inputs\n2:Find maximum value for float inputs\n3:Find maximum value for string inputs\n4:Find maximum value among similar type of values");
             int option = Convert.ToInt32(Console.ReadLine());
-            
+
             switch (option)
             {
                 case 1:
@@ -23,8 +23,8 @@ namespace FindMaxValue
                     int b = Convert.ToInt32(Console.ReadLine());
                     int c = Convert.ToInt32(Console.ReadLine());
                     int maxInt = FindMaximumValue.FindMaxValue(a, b, c);
-                    if(maxInt!=0)
-                    Console.WriteLine("{0} is the maximum value out of {1} {2} {3}", FindMaximumValue.FindMaxValue(a, b, c),a,b,c);
+                    if (maxInt != 0)
+                        Console.WriteLine("{0} is the maximum value out of {1} {2} {3}", FindMaximumValue.FindMaxValue(a, b, c), a, b, c);
                     break;
                 case 2:
                     Console.WriteLine("\nEnter the three Float value in below line.");
@@ -46,19 +46,18 @@ namespace FindMaxValue
                     break;
                 case 4:
                     Console.WriteLine("Finding maximum value using Generic class");
-                    int j = 3, k = 5, l = 7;
-                    float m = 54.6f, n = 54.3f, o = 42.6f;
-                    string p = "Ria", q = "Shyam", r = "Gita";
-                    GenericForFindMax<int> obj1 = new GenericForFindMax<int>(j, k, l);
-                    GenericForFindMax<float> obj2 = new GenericForFindMax<float>(m, n, o);
-                    GenericForFindMax<string> obj3 = new GenericForFindMax<string>(p, q, r);
+                    int[] arrInt = { 20, 30, 10, 50, 40,60 };
+                    GenericForFindMax<int> obj1 = new GenericForFindMax<int>(arrInt);
                     obj1.TestMax();
+
+                    double[] arrDouble = { 20.65, 32.06, 11.65, 25.2, 40.43, 56.8 };
+                    GenericForFindMax<double> obj2 = new GenericForFindMax<double>(arrDouble);
                     obj2.TestMax();
-                    obj3.TestMax();
                     break;
 
             }
             Console.ReadLine();
-         }   
+        }
+
     }
 }
